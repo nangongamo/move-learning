@@ -108,11 +108,15 @@ move sandbox run ./sources/HelloWorld.move
 
 
 
+------
+
+
+
 所有完整的代码在此：[01-hello-world](./../code/01-hello-world)
 
 
 
-**总结：**
+## 总结
 
 1. 快速创建 Move 项目（模块），我们使用 Move 的命令行工具  `move new <project-name>`
 2. 编译 Move 项目的命令，`move build`
