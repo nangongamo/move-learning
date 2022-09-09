@@ -36,6 +36,8 @@ cargo 1.63.0 (fd9c4297c 2022-07-01)
 
 Rust 安装好后，我们开始安装 Move ，分别执行如下两条命令：
 
+> 依赖 Git ，请先安装 Git ：https://git-scm.com/downloads
+
 安装 **move-cli**
 
 ```bash

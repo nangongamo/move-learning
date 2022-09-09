@@ -1,5 +1,7 @@
 **/target
 /target
+**/build
+storage/
 public
 resources
 **/*.rs.bk
