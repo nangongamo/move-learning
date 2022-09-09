@@ -1,4 +1,4 @@
-### Hello World
+## Hello World
 
 一门编程语言的简单入门从 Hello World 开始！
 
@@ -52,7 +52,7 @@ std =  "0x1"
 
 > `MoveNursery` 是 Move 模块的包名, 也就是 .toml 文件中的 package name 。
 
-**sources** 目录下，新增文件 `HelloWorld.move`
+**sources** 目录下，新增文件 `HelloWorld.move` ，添加如下代码：
 
 ```move
 script {

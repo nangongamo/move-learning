@@ -11,3 +11,4 @@
 
 [01. 编写 HelloWorld](./doc/01-hello-world.md)
 
+[02. 基础数据类型学习](./doc/02-move-basic-1.md)

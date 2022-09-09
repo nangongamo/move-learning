@@ -1,0 +1,11 @@
+[package]
+name = "02-move-basic-1"
+version = "0.0.0"
+
+[dependencies]
+MoveStdlib = { git = "https://github.com/move-language/move.git", subdir = "language/move-stdlib", rev = "main" }
+MoveNursery = { git = "https://github.com/move-language/move.git", subdir = "language/move-stdlib/nursery", rev = "main" }
+
+[addresses]
+std =  "0x1"
+myAddress = "0x0000000000000000000000000a550c18"
