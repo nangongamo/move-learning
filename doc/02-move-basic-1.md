@@ -133,7 +133,7 @@ debug::print(&addr);
 
 **注：**
 
-> 地址定义在项目下的 `.toml` 文件中，例如上述代码中的 `myAddress`。
+> 地址定义在包的 `Move.toml` 文件中，例如上述代码中的 `myAddress` 变量。
 
 见 **Move.toml** 文件
 

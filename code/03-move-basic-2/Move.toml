@@ -1,0 +1,10 @@
+[package]
+name = "03-move-basic-2"
+version = "0.0.0"
+
+[dependencies]
+MoveStdlib = { git = "https://github.com/move-language/move.git", subdir = "language/move-stdlib", rev = "main" }
+MySubPackage= { local = "./MySubPackage" }
+
+[addresses]
+std =  "0x1"

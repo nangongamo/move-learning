@@ -4,13 +4,15 @@
 
 > 要求已经搭建好 Move 开发环境。
 
-**创建Move 项目（模块）**
+**创建Move 包（package）**
+
+> 也可以理解为是一个项目（project）
 
 ```bash
 move new 01-hello-world
 ```
 
-会得到如下所示的**项目结构**：
+会得到如下所示的**包结构**：
 
 ```
 01-hello-world
@@ -118,8 +120,8 @@ move sandbox run ./sources/HelloWorld.move
 
 ## 总结
 
-1. 快速创建 Move 项目（模块），我们使用 Move 的命令行工具  `move new <project-name>`
-2. 编译 Move 项目的命令，`move build`
+1. 快速创建 Move 包（package），我们使用 Move 的命令行工具  `move new <project-name>`
+2. 编译 Move 包的命令，`move build`
 3. 运行代码，使用 Move 的沙盒 `sandbox`，即：`move sandbox run <a move file path>`
 4. 定义变量使用 `let` 关键字。
 5. 需要引入外部包，需提前在项目 `toml` 文件的 `dependencies` 下添加包地址，然后在 move 代码中使用 `use` 关键字导入。
