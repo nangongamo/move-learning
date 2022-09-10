@@ -1,10 +1,10 @@
-> Move 相关概念：包、模块、模块使用
+> Move 相关概念：包、模块及其使用
 
 ## 包
 
 Move 包（package）概念，简单点理解，例如我们用 IDE 创建一个 Move 目录并包含一个`.toml` 文件和含`sources` 目录的源文件，这整个目录就是一个包。而且一个目录下同样可以再创建子目录，子目录中符合上述描述的，也同样是一个包。包的清单都定义在了 `Move.toml` 文件中。
 
-例如：使用 move-cli 工具创建一个 Move工程，如下
+例如：使用 move-cli 工具创建一个 Move 项目（包），如下
 
 ```bash
 move new myPackage
@@ -34,7 +34,7 @@ a_move_package
 
 
 
-**注：**Move 包的清单定义在 `Move.toml` 文件中。Move **模块**、Move **脚本**都存放在 `sources`下。
+**注：** Move 包的清单定义在 `Move.toml` 文件中。Move **模块**、Move **脚本**都存放在 `sources`下。
 
 **包**允许 Move 程序员更轻松地重用代码并在项目之间共享。
 
@@ -44,17 +44,21 @@ a_move_package
 
 ```toml
 [package]
-name = <string>                  # 包名，例如： "myPackage"
-version = "<uint>.<uint>.<uint>" # 版本号，例如： "0.0.1"
-license* = <string>              # 许可协议，例如： "MIT", "GPL", "Apache 2.0"
-authors* = [<string>]            # 作者，例如： ["nangongamo (nangongamo@outlook.com)", "web3builder (web3builder@outlook.com)"]
+# 包名，例如： "myPackage"
+name = <string>
+# 版本号，例如： "0.0.1"
+version = "<uint>.<uint>.<uint>"
+# 许可协议，例如： "MIT", "GPL", "Apache 2.0"
+license* = <string>
+# 作者，例如： ["nangongamo (nangongamo@outlook.com)", "web3builder (web3builder@outlook.com)"]
+authors* = [<string>]
 
 [addresses]  
 # 定义地址（addresses）变量，例如, Std = "_" 或者 Addr = "0x1"
 <addr_name> = "_" | "<hex_address>" 
 
 [dependencies] 
-# 定义一个或多个依赖包。
+# 可以定义一个或多个依赖包。
 # 本地依赖
 <package_name> = { local = <string>, addr_subst* = { (<string> = (<string> | "<hex_address>"))+ } } 
 # git 远程依赖
@@ -167,6 +171,7 @@ Test result: OK. Total tests: 2; passed: 2; failed: 0
   ```
   script {
   	use 0x1::debug;
+  	
       fun main(num: u8) {
           debug::print(&num);
       }
@@ -213,7 +218,7 @@ MoveStdlib = { git = "https://github.com/move-language/move.git", subdir = "lang
 
 **依赖本地的**
 
-我们 Move 项目或包下面可能会建多个子目录（其他独立的 Move 包）。那么就会存在本地依赖的问题，我需要用到当前项目下的其他 Move 包。
+我们 Move 项目或包下面可能会建多个子目录（其他独立的 Move 包）。那么就会存在本地依赖的问题，比如我需要用到当前项目下的其他 Move 包。
 
 同样，也是在 `Move.toml` 文件中配置，语法格式如下：
 
@@ -258,7 +263,7 @@ MySubPackage= { local = "./MySubPackage" }
 
 > local 的值就是包的目录的相对路径
 
-然后，新建个`invoke_module.move` 文件来导入 MySubPackage 包下的`math3`模块，代码如下：
+然后，在当前包的 `sources` 目录下新建个`invoke_module.move` 文件来导入 MySubPackage 包下的`math3`模块，代码如下：
 
 ```move
 script {
