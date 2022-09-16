@@ -210,11 +210,11 @@ script {
   ```move
   script {
   
-  	use 0x1::debug;
+    use 0x1::debug;
   	
-      fun main(num: u8) {
-          debug::print(&num);
-      }
+    fun main(num: u8) {
+        debug::print(&num);
+    }
   }
   ```
 
