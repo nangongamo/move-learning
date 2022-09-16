@@ -30,7 +30,7 @@ a_move_package
 └── tests          (optional, test mode)
 ```
 
-> 引自 starcoin  cookbook 中关于包的结构展示。
+> 更详细见：https://move-language.github.io/move/packages.html
 
 
 
