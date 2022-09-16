@@ -1,4 +1,4 @@
-> Move 相关概念：包、模块及其使用
+> Move 相关概念：包、模块、脚本及其使用
 
 ## 包
 
@@ -142,6 +142,45 @@ Test result: OK. Total tests: 2; passed: 2; failed: 0
 
 
 
+## 脚本
+
+**Scripts**（脚本）按如下结构呈现：
+
+```move
+script {
+    <use>*
+    <constants>*
+    fun <identifier><[type parameters: constraint]*>([identifier: type]*) <function_body>
+}
+```
+
+> 脚本块内的函数外是不能定义变量的，只能定义**常量**，以及如果有模块 ( module ) 导入的话，可以使用 use 关键字导入模块供函数使用。
+
+脚本 ( scripts ) 的作用主要是用于调用模块函数。
+
+其实，脚本的功能是相对有限的，它们不能声明 `friends` 、`struct` 类型或访问全局存储。
+
+脚本块中只能有一个函数，函数命名无约束（只是大家都喜欢定义为 main 函数），函数的参数允许没有也可以是多个，但函数是没有返回值的。
+
+示例：
+
+```move
+script {
+
+    use std::debug;
+
+    const U64_MAX: u64 = 18446744073709551615;
+
+    fun main(num:u128) {
+        let sum = (U64_MAX as u128) + num;
+        debug::print(&sum)
+    }
+
+}
+```
+
+
+
 ## 使用
 
 ### 模块的使用
@@ -168,8 +207,9 @@ Test result: OK. Total tests: 2; passed: 2; failed: 0
 
   例如：
 
-  ```
+  ```move
   script {
+  
   	use 0x1::debug;
   	
       fun main(num: u8) {
