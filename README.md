@@ -64,3 +64,4 @@ move-analyzer -V
 
 [03. 理解 Move 包和模块](./doc/03-move-basic-2.md)
 
+[示例 BasicCoin](./code/BasicCoin)
