@@ -64,4 +64,16 @@ move-analyzer -V
 
 [03. 理解 Move 包和模块](./doc/03-move-basic-2.md)
 
+[Move 其他语法](https://move-language.github.io/move/introduction.html)
+
+
+
+**标准库**
+
+- Option
+
+  >Move 中的 `option` 用来在程序运行过程中表达`有（1）`和`无（0）`的概念。像某些编程语言在代码中还需要处理 Null 值问题，不然抛出空指针异常。但对于主打安全的 Move 智能合约来说这是要去避免的，类似解决 `Null` 空指针问题，当然 Move 中是没有 `Null`关键字。
+
+
+
 [示例 BasicCoin](./code/BasicCoin)
