@@ -32,7 +32,7 @@ module nangongamo::Memories {
         let (res,idx) = Vector::index_of(memories, &memory);
         if(res) {
             Vector::remove<Memory>(memories,idx);
-            *memoriesRes = Memories { value: *memories }
+            //*memoriesRes = Memories { value: *memories }
         }
     }
 
